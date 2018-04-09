@@ -16,6 +16,7 @@ import java.nio.file.Paths;
 import static java.lang.String.format;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.fail;
 
 
@@ -24,6 +25,22 @@ import static org.testng.Assert.fail;
  *         Date: 24.11.13
  */
 public class SimpleTest {
+
+    @Test
+    public void newAddTest(){
+        assertEquals(1+1,2);
+    }
+
+    @Test
+    public void newAddIntTest(){
+        assertEquals(2+2,5);
+    }
+
+    @Test
+    public void newAddStrTest(){
+        assertEquals("hello"+" world","hello world");
+    }
+
     @Test
     public void simpleTest() throws Exception {
         assertThat(2, is(2));
@@ -123,4 +140,3 @@ public class SimpleTest {
         return Files.readAllBytes(Paths.get(resource.toURI()));
     }
 }
-
